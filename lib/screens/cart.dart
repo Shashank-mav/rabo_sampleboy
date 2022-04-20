@@ -9,17 +9,16 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return Container(
       child: RaisedButton(
-        child: const Text('Continue'),
-        onPressed: () {
-
-        },
+        child: const Text(
+          'Continue',
         ),
+        onPressed: () {},
+      ),
     );
   }
 }

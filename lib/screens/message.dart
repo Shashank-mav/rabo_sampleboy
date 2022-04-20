@@ -7,10 +7,8 @@ class MessageScreen extends StatefulWidget {
 }
 
 class _MessageScreenState extends State<MessageScreen> {
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-    );
+    return Container(child: Text("message"));
   }
 }

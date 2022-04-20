@@ -4,35 +4,44 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:rabo/navbar_key.dart';
-import 'package:rabo/screens/account.dart';
-import 'package:rabo/screens/cart.dart';
 import 'package:rabo/screens/feed.dart';
 import 'package:rabo/screens/home.dart';
 import 'package:rabo/screens/message.dart';
+import 'package:rabo/screens/rabo_sampleboy_profile_details.dart';
 
 // ignore: use_key_in_widget_constructors
 class MainScreen extends StatefulWidget {
-   @override
+  @override
   _MainScreen createState() => _MainScreen();
-  }
-  class _MainScreen extends State<MainScreen> {
-  int selectedIndex = 0;
-  final screen = [HomeScreen(), FeedScreen(), MessageScreen(), CartScreen(), AccountScreen()];
+}
+
+class _MainScreen extends State<MainScreen> {
+  var selectedIndex = 0;
+  final screen = [HomeScreen(), FeedScreen(), MessageScreen(), MemberProfile()];
 
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         index: selectedIndex,
         key: NavbarKey.getKey(),
         items: [
           // Icons(Icons.home, size: 30),
-          Icon(Icons.message, size: 30, color: Color.fromRGBO(0, 200, 151, 1),),
-          Icon(Icons.feedback, size: 30),
-          Icon(Icons.settings, size: 30), 
-          ElevatedButton(child: Icon(Icons.account_circle, size: 30,),onPressed: null, ),
+          Icon(
+            (selectedIndex == 0) ? Icons.home : Icons.home,
+            size: 30,
+            color: Color.fromRGBO(0, 200, 151, 1),
+          ),
+          Icon((selectedIndex == 1) ? Icons.feedback : Icons.feedback,
+              size: 30),
+          Icon((selectedIndex == 2) ? Icons.settings : Icons.settings,
+              size: 30),
+          Icon(
+            (selectedIndex == 2) ? Icons.account_circle : Icons.account_circle,
+            size: 30,
+          ),
         ],
-        onTap:(index){
+        onTap: (index) {
           setState(() {
             selectedIndex = index;
           });
@@ -41,7 +50,6 @@ class MainScreen extends StatefulWidget {
         buttonBackgroundColor: Color.fromRGBO(0, 200, 151, 1),
         backgroundColor: Color.fromRGBO(0, 200, 151, 1),
         animationDuration: const Duration(milliseconds: 300),
-
       ),
       body: screen[selectedIndex],
     );

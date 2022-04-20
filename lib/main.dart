@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      scaffoldBackgroundColor: Color.fromRGBO(235, 255, 250, 1),
-      ),
+      // title: 'Flutter Demo',
+      // theme: ThemeData(
+      //   scaffoldBackgroundColor: Color.fromRGBO(235, 255, 250, 1),
+      // ),
       home: MainScreen(),
     );
   }
