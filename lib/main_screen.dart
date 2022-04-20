@@ -23,14 +23,16 @@ class MainScreen extends StatefulWidget {
   Widget build(BuildContext context) {
      return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
+        color: Color.fromRGBO(0, 200, 151, 0.6),
+        height: 60,
         index: selectedIndex,
         key: NavbarKey.getKey(),
         items: [
           // Icons(Icons.home, size: 30),
-          Icon(Icons.message, size: 30, color: Color.fromRGBO(0, 200, 151, 1),),
-          Icon(Icons.feedback, size: 30),
-          Icon(Icons.settings, size: 30), 
-          ElevatedButton(child: Icon(Icons.account_circle, size: 30,),onPressed: null, ),
+          Icon(Icons.message, size: 30, color: Color.fromARGB(255, 8, 44, 27),),
+          Icon(Icons.feedback, size: 30, color: Color.fromARGB(255, 8, 44, 27),),
+          Icon(Icons.settings, size: 30, color: Color.fromARGB(255, 8, 44, 27),), 
+          Icon(Icons.account_circle, size: 30, color: Color.fromARGB(255, 8, 44, 27),), 
         ],
         onTap:(index){
           setState(() {
@@ -38,8 +40,8 @@ class MainScreen extends StatefulWidget {
           });
         },
         animationCurve: Curves.easeInBack,
-        buttonBackgroundColor: Color.fromRGBO(0, 200, 151, 1),
-        backgroundColor: Color.fromRGBO(0, 200, 151, 1),
+        buttonBackgroundColor: Color.fromARGB(153, 0, 200, 151),
+        backgroundColor: Color.fromRGBO(235, 255, 250, 1),
         animationDuration: const Duration(milliseconds: 300),
 
       ),
