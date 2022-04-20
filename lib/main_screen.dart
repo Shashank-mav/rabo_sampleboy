@@ -5,7 +5,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:rabo/navbar_key.dart';
 import 'package:rabo/screens/account.dart';
-import 'package:rabo/screens/cart.dart';
 import 'package:rabo/screens/feed.dart';
 import 'package:rabo/screens/home.dart';
 import 'package:rabo/screens/message.dart';
@@ -16,8 +15,8 @@ class MainScreen extends StatefulWidget {
   _MainScreen createState() => _MainScreen();
   }
   class _MainScreen extends State<MainScreen> {
-  int selectedIndex = 0;
-  final screen = [HomeScreen(), FeedScreen(), MessageScreen(), CartScreen(), AccountScreen()];
+  var selectedIndex = 0;
+  final screen = [HomeScreen(), FeedScreen(), MessageScreen(),  AccountScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +28,17 @@ class MainScreen extends StatefulWidget {
         key: NavbarKey.getKey(),
         items: [
           // Icons(Icons.home, size: 30),
+<<<<<<< HEAD
           Icon(Icons.message, size: 30, color: Color.fromARGB(255, 8, 44, 27),),
           Icon(Icons.feedback, size: 30, color: Color.fromARGB(255, 8, 44, 27),),
           Icon(Icons.settings, size: 30, color: Color.fromARGB(255, 8, 44, 27),), 
           Icon(Icons.account_circle, size: 30, color: Color.fromARGB(255, 8, 44, 27),), 
+=======
+          Icon((selectedIndex==0) ? Icons.home : Icons.home, size: 30, color: Color.fromRGBO(0, 200, 151, 1),),
+          Icon((selectedIndex==1) ? Icons.feedback: Icons.feedback, size: 30),
+          Icon((selectedIndex==2) ? Icons.settings: Icons.settings, size: 30), 
+          Icon((selectedIndex==2) ? Icons.account_circle: Icons.account_circle, size: 30,), 
+>>>>>>> 368a7a69e6919d80bc33a15acd18b277460df70c
         ],
         onTap:(index){
           setState(() {
